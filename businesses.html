@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Businesses | BusinessHub58</title>
+    <meta name="description" content="Explore businesses, services and professionals listed on BusinessHub58. Search and filter business listings by category.">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="businesses.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo" aria-label="BusinessHub58 Home">
+                <img src="BusinessHub58%20logo.jpg" alt="BusinessHub58">
+            </a>
+
+            <nav class="nav-menu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="businesses.html" aria-current="page">Businesses</a>
+                <a href="categories.html">Categories</a>
+                <a href="advertise.html">Advertise</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="list-your-business.html" class="business-btn">List Your Business</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Page Hero -->
+    <section class="businesses-hero">
+        <div class="businesses-hero-container">
+
+            <span class="businesses-label">DISCOVER LOCAL BUSINESSES</span>
+
+            <h1>Find Businesses That Fit Your Needs.</h1>
+
+            <p>
+                Explore businesses, services and professionals
+                listed on BusinessHub58.
+            </p>
+
+            <form class="businesses-search" id="businessSearchForm" role="search">
+
+                <input
+                    type="search"
+                    id="businessSearchInput"
+                    placeholder="Search businesses, services or categories..."
+                    aria-label="Search businesses"
+                    autocomplete="off"
+                >
+
+                <button type="submit">Search</button>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- Businesses Directory -->
+    <section class="business-directory">
+        <div class="directory-container">
+
+            <div class="directory-heading">
+
+                <div>
+                    <span>BUSINESS DIRECTORY</span>
+                    <h2>Explore Businesses</h2>
+                </div>
+
+                <label class="directory-filter">
+                    <span class="visually-hidden">Filter by category</span>
+
+                    <select id="categoryFilter" aria-label="Filter businesses by category">
+                        <option value="all">All Categories</option>
+                        <option value="Restaurants & Food">Restaurants &amp; Food</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Health & Medicine">Health &amp; Medicine</option>
+                        <option value="Beauty & Personal Care">Beauty &amp; Personal Care</option>
+                        <option value="Home & Construction">Home &amp; Construction</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Education">Education</option>
+                        <option value="Professional Services">Professional Services</option>
+                    </select>
+                </label>
+
+            </div>
+
+
+            <!-- Live result count -->
+            <p
+                class="directory-results-count"
+                id="directoryResultsCount"
+                role="status"
+                aria-live="polite"
+            >
+                Showing 4 businesses
+            </p>
+
+
+            <div class="directory-grid" id="directoryGrid">
+
+                <!-- Business 1 -->
+                <article class="directory-card"
+                    data-category="Restaurants & Food">
+
+                    <div class="directory-image">
+                        <img
+                            src="featured-restaurant.jpg"
+                            alt="Urban Table Restaurant"
+                            loading="lazy"
+                        >
+
+                        <span class="directory-featured">Featured</span>
+                    </div>
+
+                    <div class="directory-content">
+
+                        <span class="directory-category">Restaurants &amp; Food</span>
+
+                        <h3>Urban Table Restaurant</h3>
+
+                        <p class="directory-location">📍 Downtown</p>
+
+                        <p>
+                            A modern local restaurant serving quality
+                            food in a welcoming atmosphere.
+                        </p>
+
+                        <a href="#" class="directory-link">
+                            View Business →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- Business 2 -->
+                <article class="directory-card"
+                    data-category="Beauty & Personal Care">
+
+                    <div class="directory-image">
+                        <img
+                            src="featured-salon.jpg"
+                            alt="Elite Beauty Studio"
+                            loading="lazy"
+                        >
+
+                        <span class="directory-featured">Featured</span>
+                    </div>
+
+                    <div class="directory-content">
+
+                        <span class="directory-category">Beauty &amp; Personal Care</span>
+
+                        <h3>Elite Beauty Studio</h3>
+
+                        <p class="directory-location">📍 City Centre</p>
+
+                        <p>
+                            Professional beauty and personal care
+                            services in a modern environment.
+                        </p>
+
+                        <a href="#" class="directory-link">
+                            View Business →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- Business 3 -->
+                <article class="directory-card"
+                    data-category="Health & Medicine">
+
+                    <div class="directory-image">
+                        <img
+                            src="featured-clinic.jpg"
+                            alt="CarePoint Clinic"
+                            loading="lazy"
+                        >
+
+                        <span class="directory-featured">Featured</span>
+                    </div>
+
+                    <div class="directory-content">
+
+                        <span class="directory-category">Health &amp; Medicine</span>
+
+                        <h3>CarePoint Clinic</h3>
+
+                        <p class="directory-location">📍 Central District</p>
+
+                        <p>
+                            A professional healthcare clinic focused
+                            on a comfortable patient experience.
+                        </p>
+
+                        <a href="#" class="directory-link">
+                            View Business →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- Business 4 -->
+                <article class="directory-card"
+                    data-category="Automotive">
+
+                    <div class="directory-image">
+                        <img
+                            src="featured-automotive.jpg"
+                            alt="ProAuto Services"
+                            loading="lazy"
+                        >
+
+                        <span class="directory-featured">Featured</span>
+                    </div>
+
+                    <div class="directory-content">
+
+                        <span class="directory-category">Automotive</span>
+
+                        <h3>ProAuto Services</h3>
+
+                        <p class="directory-location">📍 Business District</p>
+
+                        <p>
+                            Reliable automotive services from a
+                            professional and experienced team.
+                        </p>
+
+                        <a href="#" class="directory-link">
+                            View Business →
+                        </a>
+
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- No-results message -->
+            <div
+                class="directory-no-results"
+                id="directoryNoResults"
+                hidden
+            >
+                <h3>No businesses found</h3>
+
+                <p>
+                    Try another search term or select a different category.
+                </p>
+
+                <button type="button" id="resetBusinessSearch">
+                    Clear Search &amp; Filters
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-column footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    <img src="BusinessHub58%20logo.jpg" alt="BusinessHub58">
+                </a>
+
+                <p>
+                    Discover businesses, promote your brand and connect
+                    with more customers through BusinessHub58.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="businesses.html">Businesses</a>
+                <a href="categories.html">Categories</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>For Businesses</h3>
+
+                <a href="list-your-business.html">List Your Business</a>
+                <a href="advertise.html">Advertise With Us</a>
+                <a href="pricing.html">Featured Promotion</a>
+                <a href="#">Business Resources</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 BusinessHub58. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
