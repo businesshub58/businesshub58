@@ -3319,3 +3319,93 @@ body {
     }
 
 }
+
+/* Businesses Directory — Search Results */
+
+.directory-results-count {
+    margin: -20px 0 24px;
+    color: #6b7582;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.directory-card[hidden],
+.directory-grid[hidden],
+.directory-no-results[hidden] {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.directory-filter {
+    display: block;
+}
+
+.directory-no-results {
+    padding: 55px 24px;
+    border: 1px solid #e5ebe8;
+    border-radius: 12px;
+    background: #f7faf9;
+    text-align: center;
+}
+
+.directory-no-results h3 {
+    margin-bottom: 12px;
+    color: #172033;
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.directory-no-results p {
+    margin-bottom: 22px;
+    color: #6b7582;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.directory-no-results button {
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 7px;
+    background: #0a875f;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.directory-no-results button:hover {
+    background: #076b4b;
+}
+
+@media (max-width: 600px) {
+    .directory-results-count {
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .directory-no-results {
+        padding: 40px 20px;
+    }
+
+    .directory-no-results h3 {
+        font-size: 21px;
+    }
+
+    .directory-no-results button {
+        width: 100%;
+    }
+}
+
