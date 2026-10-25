@@ -4,96 +4,521 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover business information, services, and contact details on BusinessHub58.">
+  <meta name="description" content="Explore business profiles, services and available contact information on BusinessHub58.">
+  <meta name="theme-color" content="#087f5b">
   <title>Business Details | BusinessHub58</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    .business-details-page {
-      width: min(100% - 32px, 1000px);
-      margin: 40px auto;
+    :root {
+      --detail-green: #087f5b;
+      --detail-dark: #12372d;
+      --detail-muted: #66756f;
+      --detail-light: #f4f8f5;
+      --detail-border: #e2eae5;
     }
 
-    .business-details-card {
-      padding: 32px;
-      border-radius: 16px;
-      background: var(--card-bg, #ffffff);
-      color: var(--text-color, #222222);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    body {
+      background: #f7f9f7;
     }
 
-    .business-details-category {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: #e5f4ed;
-      color: #176b48;
+    .profile-page {
+      width: min(1120px, calc(100% - 36px));
+      margin: 30px auto 70px;
+      color: #24352e;
+    }
+
+    .profile-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .profile-brand {
+      color: var(--detail-dark);
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+
+    .profile-brand span {
+      color: var(--detail-green);
+    }
+
+    .profile-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--detail-green);
+      text-decoration: none;
       font-size: 14px;
+      font-weight: 700;
     }
 
-    .business-details-description {
-      line-height: 1.8;
-      margin: 20px 0;
+    .profile-back:hover {
+      text-decoration: underline;
     }
 
-    .business-contact-list {
-      padding-left: 20px;
-      line-height: 2;
+    .profile-hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      min-height: 330px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--detail-border);
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(24, 57, 42, .07);
+    }
+
+    .profile-hero-image {
+      position: relative;
+      min-height: 330px;
+      background: #e7eee9;
+    }
+
+    .profile-hero-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+    }
+
+    .profile-hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 38px;
+    }
+
+    .profile-eyebrow {
+      margin: 0 0 15px;
+      color: var(--detail-green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .profile-category {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 13px;
+      border: 1px solid #d5eadf;
+      border-radius: 50px;
+      background: #eaf6ef;
+      color: #176b48;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .profile-title {
+      margin: 0 0 14px;
+      color: var(--detail-dark);
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.15;
+      letter-spacing: -1px;
       overflow-wrap: anywhere;
     }
 
-    .business-details-actions {
+    .profile-intro {
+      margin: 0;
+      color: var(--detail-muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .profile-hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
+      gap: 11px;
+      margin-top: 25px;
     }
 
-    .business-details-actions a,
-    .business-back-link {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 8px;
+    .profile-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
       text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
     }
 
-    .business-primary-link {
-      background: #087f5b;
-      color: #ffffff;
+    .profile-button:hover {
+      transform: translateY(-2px);
     }
 
-    .business-back-link {
-      margin-bottom: 20px;
-      color: inherit;
+    .profile-button-primary {
+      background: var(--detail-green);
+      color: #fff;
     }
 
-    .business-detail-message {
-      padding: 20px;
+    .profile-button-primary:hover {
+      background: #066748;
+    }
+
+    .profile-button-secondary {
+      border-color: var(--detail-border);
+      background: #fff;
+      color: var(--detail-dark);
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(250px, .85fr);
+      gap: 22px;
+      margin-top: 24px;
+      align-items: start;
+    }
+
+    .profile-main,
+    .profile-sidebar {
+      display: grid;
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .profile-panel {
+      padding: 28px;
+      border: 1px solid var(--detail-border);
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(24, 57, 42, .035);
+    }
+
+    .profile-section-kicker {
+      margin: 0 0 8px;
+      color: var(--detail-green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .profile-section-title {
+      margin: 0 0 14px;
+      color: var(--detail-dark);
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -.4px;
+    }
+
+    .profile-section-copy {
+      margin: 0;
+      color: var(--detail-muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .profile-services {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 22px;
+    }
+
+    .profile-service {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 95px;
+      padding: 17px 15px;
+      border: 1px solid var(--detail-border);
+      border-radius: 12px;
+      background: #fbfdfb;
+    }
+
+    .profile-service-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 37px;
+      width: 37px;
+      height: 37px;
       border-radius: 10px;
-      background: #f4f6f5;
-      color: #333333;
+      background: #e9f5ed;
+      color: var(--detail-green);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .profile-service h3 {
+      margin: 2px 0 5px;
+      color: var(--detail-dark);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .profile-service p {
+      margin: 0;
+      color: var(--detail-muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .profile-benefits {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .profile-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .profile-check {
+      display: grid;
+      place-items: center;
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #e8f5ed;
+      color: #087f5b;
+      font-weight: 800;
+    }
+
+    .profile-benefit strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--detail-dark);
+      font-size: 14px;
+    }
+
+    .profile-benefit p {
+      margin: 0;
+      color: var(--detail-muted);
+      font-size: 13px;
       line-height: 1.7;
     }
 
-    @media (max-width: 600px) {
-      .business-details-card {
+    .profile-info-row {
+      display: flex;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #edf1ee;
+    }
+
+    .profile-info-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .profile-info-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--detail-light);
+      font-size: 17px;
+    }
+
+    .profile-info-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--detail-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    .profile-info-value {
+      color: var(--detail-dark);
+      font-size: 13px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-info-note {
+      margin: 15px 0 0;
+      color: var(--detail-muted);
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .profile-cta {
+      padding: 25px;
+      border-radius: 16px;
+      background: var(--detail-dark);
+      color: #fff;
+    }
+
+    .profile-cta h2 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      line-height: 1.4;
+    }
+
+    .profile-cta p {
+      margin: 0;
+      color: #d5e5dc;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .profile-cta .profile-button {
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+      color: var(--detail-dark);
+    }
+
+    .profile-footer {
+      padding: 28px 10px 0;
+      color: var(--detail-muted);
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .profile-footer a {
+      color: var(--detail-green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .profile-loading,
+    .profile-error {
+      padding: 45px 25px;
+      border: 1px solid var(--detail-border);
+      border-radius: 18px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .profile-loading h1,
+    .profile-error h1 {
+      color: var(--detail-dark);
+    }
+
+    .profile-loading p,
+    .profile-error p {
+      color: var(--detail-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 760px) {
+      .profile-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-hero-image,
+      .profile-hero-image img {
+        min-height: 240px;
+        max-height: 320px;
+      }
+
+      .profile-hero-content {
+        padding: 27px;
+      }
+
+      .profile-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-panel {
+        padding: 23px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-page {
+        width: calc(100% - 24px);
+        margin-top: 18px;
+      }
+
+      .profile-topbar {
+        align-items: flex-start;
+      }
+
+      .profile-brand {
+        font-size: 17px;
+      }
+
+      .profile-back {
+        font-size: 12px;
+      }
+
+      .profile-hero-image,
+      .profile-hero-image img {
+        min-height: 205px;
+      }
+
+      .profile-hero-content {
         padding: 22px;
+      }
+
+      .profile-title {
+        font-size: 29px;
+      }
+
+      .profile-services {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-service {
+        min-height: 80px;
+      }
+
+      .profile-hero-actions {
+        width: 100%;
+      }
+
+      .profile-hero-actions .profile-button {
+        flex: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-button {
+        transition: none;
+      }
+
+      .profile-button:hover {
+        transform: none;
       }
     }
   </style>
 </head>
-<body>
-  <main class="business-details-page">
-    <a class="business-back-link" href="businesses.html">
-      &larr; Back to Businesses
-    </a>
 
-    <section id="business-details" class="business-details-card" aria-live="polite">
-      <p>Loading business details...</p>
-    </section>
+<body>
+  <main class="profile-page">
+    <header class="profile-topbar">
+      <a class="profile-brand" href="index.html" aria-label="BusinessHub58 home">
+        Business<span>Hub58</span>
+      </a>
+
+      <a class="profile-back" href="businesses.html">
+        <span aria-hidden="true">←</span> All Businesses
+      </a>
+    </header>
+
+    <div id="business-details" aria-live="polite">
+      <div class="profile-loading">
+        <h1>Loading business profile</h1>
+        <p>Please wait while we prepare the business information.</p>
+      </div>
+    </div>
+
+    <footer class="profile-footer">
+      Discover businesses with <a href="businesses.html">BusinessHub58</a>.
+      <br>
+      Business information is displayed as available.
+    </footer>
   </main>
 
   <script src="business-details.js"></script>
 </body>
 </html>
-
