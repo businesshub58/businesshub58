@@ -1,1 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>List Your Business | BusinessHub58</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <img src="BusinessHub58%20logo.jpg" alt="BusinessHub58">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="businesses.html">Businesses</a>
+                <a href="categories.html">Categories</a>
+                <a href="advertise.html">Advertise</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+
+                <a href="list-your-business.html" class="business-btn">
+                    List Your Business
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Page Hero -->
+    <section class="listing-page-hero">
+        <div class="listing-page-hero-container">
+
+            <span class="listing-page-label">
+                GROW YOUR BUSINESS ONLINE
+            </span>
+
+            <h1>
+                List Your Business on BusinessHub58.
+            </h1>
+
+            <p>
+                Create your business presence, help customers discover you,
+                and start building greater online visibility.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Listing Form Section -->
+    <section class="listing-form-section">
+
+        <div class="listing-form-container">
+
+            <div class="listing-form-heading">
+
+                <span>BUSINESS INFORMATION</span>
+
+                <h2>
+                    Tell Us About Your Business
+                </h2>
+
+                <p>
+                    Complete the form below with your business details.
+                    We will use this information to create your listing.
+                </p>
+
+            </div>
+
+
+            <form class="business-listing-form">
+
+                <!-- Business Details -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Business Details</h3>
+                        <p>Basic information about your business.</p>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="business-name">
+                                Business Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="business-name"
+                                name="business-name"
+                                placeholder="Enter your business name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="business-category">
+                                Business Category *
+                            </label>
+
+                            <select
+                                id="business-category"
+                                name="business-category"
+                                required
+                            >
+                                <option value="">
+                                    Select a category
+                                </option>
+
+                                <option value="restaurants-food">
+                                    Restaurants & Food
+                                </option>
+
+                                <option value="shopping">
+                                    Shopping
+                                </option>
+
+                                <option value="health-medicine">
+                                    Health & Medicine
+                                </option>
+
+                                <option value="beauty">
+                                    Beauty & Personal Care
+                                </option>
+
+                                <option value="home-construction">
+                                    Home & Construction
+                                </option>
+
+                                <option value="automotive">
+                                    Automotive
+                                </option>
+
+                                <option value="education">
+                                    Education
+                                </option>
+
+                                <option value="professional-services">
+                                    Professional Services
+                                </option>
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Contact Information -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Contact Information</h3>
+                        <p>Give customers a way to contact your business.</p>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone Number *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your business email"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="website">
+                                Website
+                            </label>
+
+                            <input
+                                type="url"
+                                id="website"
+                                name="website"
+                                placeholder="https://yourwebsite.com"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="location">
+                                Business Location *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="City, area or full address"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Business Description -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Business Description</h3>
+                        <p>Tell potential customers what your business offers.</p>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="description">
+                            About Your Business *
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="7"
+                            placeholder="Describe your business, services or products..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Online Presence -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Online Presence</h3>
+                        <p>Add your social media profiles if available.</p>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="facebook">
+                                Facebook
+                            </label>
+
+                            <input
+                                type="url"
+                                id="facebook"
+                                name="facebook"
+                                placeholder="Facebook profile or page URL"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="instagram">
+                                Instagram
+                            </label>
+
+                            <input
+                                type="url"
+                                id="instagram"
+                                name="instagram"
+                                placeholder="Instagram profile URL"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Business Image -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Business Image</h3>
+                        <p>Add your business logo or main image.</p>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="business-image">
+                            Business Logo / Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="business-image"
+                            name="business-image"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            Recommended: clear JPG or PNG image.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Promotion -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        <h3>Promotion Option</h3>
+                        <p>Choose how you would like to promote your business.</p>
+                    </div>
+
+                    <div class="promotion-options">
+
+                        <label class="promotion-option">
+
+                            <input
+                                type="radio"
+                                name="promotion"
+                                value="free"
+                                checked
+                            >
+
+                            <span>
+                                <strong>Free Listing</strong>
+                                <small>
+                                    Basic business listing on BusinessHub58.
+                                </small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="promotion-option">
+
+                            <input
+                                type="radio"
+                                name="promotion"
+                                value="featured"
+                            >
+
+                            <span>
+                                <strong>Featured Listing</strong>
+                                <small>
+                                    Additional visibility for your business.
+                                </small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="promotion-option">
+
+                            <input
+                                type="radio"
+                                name="promotion"
+                                value="premium"
+                            >
+
+                            <span>
+                                <strong>Premium Promotion</strong>
+                                <small>
+                                    Broader promotional exposure.
+                                </small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+                <div class="form-submit">
+
+                    <button
+                        type="submit"
+                        class="listing-submit-btn"
+                    >
+                        Submit Your Business
+                    </button>
+
+                    <p>
+                        Your information will be reviewed before publication.
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-column footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    <img
+                        src="BusinessHub58%20logo.jpg"
+                        alt="BusinessHub58"
+                    >
+                </a>
+
+                <p>
+                    Discover businesses, promote your brand and connect
+                    with more customers through BusinessHub58.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="businesses.html">Businesses</a>
+                <a href="categories.html">Categories</a>
+                <a href="advertise.html">Advertise</a>
+                <a href="pricing.html">Pricing</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>For Businesses</h3>
+
+                <a href="list-your-business.html">
+                    List Your Business
+                </a>
+
+                <a href="advertise.html">
+                    Advertise With Us
+                </a>
+
+                <a href="pricing.html">
+                    Featured Promotion
+                </a>
+
+                <a href="#">
+                    Business Resources
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Company</h3>
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Blog
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 BusinessHub58. All rights reserved.
+            </p>
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
